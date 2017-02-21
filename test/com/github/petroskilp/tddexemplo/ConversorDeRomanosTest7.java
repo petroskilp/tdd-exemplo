@@ -14,11 +14,11 @@ import org.junit.Test;
  * @author Elias Nogueira <http://about.me/eliasnogueira>
  *
  */
-public class ConversorDeRomanosTest5 {
+public class ConversorDeRomanosTestCorrigido {
 
     @Test
     public void converterOSimboloI() {
-       ConversorDeRomanos5 conversor = new ConversorDeRomanos5();
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
        int resultadoObtido = conversor.converte("I");
        
        assertEquals(1, resultadoObtido);
@@ -26,7 +26,7 @@ public class ConversorDeRomanosTest5 {
 
     @Test
     public void converterOSimboloV() {
-       ConversorDeRomanos5 conversor = new ConversorDeRomanos5();
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
        int resultadoObtido = conversor.converte("V");
        
        assertEquals(5, resultadoObtido);
@@ -34,7 +34,7 @@ public class ConversorDeRomanosTest5 {
     
     @Test
     public void converterOSimboloC() {
-       ConversorDeRomanos5 conversor = new ConversorDeRomanos5();
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
        int resultadoObtido = conversor.converte("C");
        
        assertEquals(100, resultadoObtido);
@@ -42,9 +42,34 @@ public class ConversorDeRomanosTest5 {
     
     @Test
     public void converterOSimboloII() {
-       ConversorDeRomanos5 conversor = new ConversorDeRomanos5();
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
        int resultadoObtido = conversor.converte("II");
        
        assertEquals(2, resultadoObtido);
     }
+    
+    @Test
+    public void converterOSimboloVI() {
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
+       int resultadoObtido = conversor.converte("VI");
+       
+       assertEquals(6, resultadoObtido);
+    }
+    
+    @Test
+    public void converterOSimboloIX() {
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
+       int resultadoObtido = conversor.converte("IX");
+       
+       assertEquals(9, resultadoObtido);
+    }
+
+    @Test
+    public void converterOSimboloXXIV() {
+       ConversorDeRomanos7 conversor = new ConversorDeRomanos7();
+       int resultadoObtido = conversor.converte("XXIV");
+       
+       assertEquals(24, resultadoObtido);
+    }
+    
 }

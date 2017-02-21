@@ -13,7 +13,7 @@ import java.util.Map;
  * @author Elias Nogueira <http://about.me/eliasnogueira>
  *
  */
-public class ConversorDeRomanos6 {
+public class ConversorDeRomanosCorrigido {
 
     @SuppressWarnings("serial")
     private static Map<Character, Integer> tabela = new HashMap<Character, Integer>() {{
@@ -28,11 +28,21 @@ public class ConversorDeRomanos6 {
     
     public int converte(String numeroRomano) {
         int acumulador = 0;
-        
-        for (int i = 0; i < numeroRomano.length(); i++) {
-            acumulador += tabela.get(numeroRomano.charAt(i));
+        int ultimoVizinhoDaDireita = 0;
+
+        for(int i = numeroRomano.length() - 1; i >= 0; i--) {
+            // pega o inteiro referente ao simbolo atual
+            int atual = tabela.get(numeroRomano.charAt(i));
+            
+            // se o da direita for menor, o multiplicaremos
+            // por -1 para torná-lo negativo
+            int multiplicador = 1;
+            if(atual < ultimoVizinhoDaDireita) multiplicador = -1;
+            acumulador += tabela.get(numeroRomano.charAt(i)) * multiplicador;
+            
+            // atualiza o vizinho da direita
+            ultimoVizinhoDaDireita = atual;
         }
-        
         return acumulador;
     }
 }
